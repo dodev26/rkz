@@ -1,0 +1,8 @@
+export const enum StyleConstants {
+  WIDTH_WRAPPER = '1920px',
+  SM_CONTAINER_WIDTH = '100%',
+  MD_CONTAINER_WIDTH = '750px',
+  LG_CONTAINER_WIDTH = '990px',
+  XL_CONTAINER_WIDTH = '1170px',
+  XXL_CONTAINER_WIDTH = '1470px',
+}

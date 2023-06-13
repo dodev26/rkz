@@ -17,17 +17,8 @@ export const StepWrapper = styled.div`
 `;
 
 export const Step = styled.div`
-  /* flex: 0 1 calc(20% - 13.5px);
-  padding: 15px 20px;
-  background: #072d75;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 40px;
-  color: #ffffff;
-  text-align: center; */
-  width: 44px;
-  height: 44px;
+  width: 50px;
+  height: 50px;
   border-radius: 100rem;
   border-radius: 50px;
   display: flex;
@@ -35,14 +26,16 @@ export const Step = styled.div`
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 40px;
+  flex-shrink: 0;
+  font-size: 10px;
   color: #072d75;
   position: relative;
   ${media.md} {
     width: unset;
     height: unset;
     padding: 15px 20px;
+    line-height: 40px;
+    font-size: 20px;
     flex: 0 1 calc(20% - 13.5px);
   }
   &:not(:last-child)::after {

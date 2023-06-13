@@ -5,14 +5,15 @@ export const Radio = styled(AntdRadio)`
   &.ant-radio-wrapper {
     font-size: 16px;
     font-weight: 400;
+    flex-shrink: 0;
     & > .ant-radio {
       & > .ant-radio-inner {
         border-color: ${({ theme }) => theme._borderSecondary};
         border-style: solid;
         border-width: 2px;
-        width: 25px;
+        width: 20px;
         background-color: white;
-        height: 25px;
+        height: 20px;
       }
       &.ant-radio-checked {
         & > .ant-radio-inner {

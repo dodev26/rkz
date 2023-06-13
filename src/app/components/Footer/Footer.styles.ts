@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { BaseRow as AntRow } from 'app/components/common/BaseRow';
+import { media } from 'styles/media';
 
 export const FotterWrapper = styled.div`
   width: 100%;
@@ -19,22 +20,35 @@ export const FooterLogo = styled.h2`
   font-style: inherit;
   color: ${({ theme }) => theme._textSecondary};
   font-weight: 700;
-  font-size: 40px;
+  font-size: 25px;
   line-height: 49px;
+  ${media.xl} {
+    font-size: 40px;
+  }
 `;
 
 export const FooterHelpText = styled.span`
   font-family: inherit;
   font-style: italic;
   font-weight: 200;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 24px;
   color: ${({ theme }) => theme._textColorSecondary};
+  ${media.xl} {
+    font-size: 20px;
+  }
 `;
 
 export const RowListLinkFooter = styled(AntRow)`
   width: 100%;
-  margin-top: 34px;
+  margin-top: 30px;
+  row-gap: 30px;
+  ${media.lg} {
+    row-gap: unset;
+  }
+  ${media.xl} {
+    row-gap: 34px;
+  }
 `;
 
 export const TitleListLinkFooter = styled.h3`

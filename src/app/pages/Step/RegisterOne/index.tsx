@@ -9,6 +9,7 @@ import { BaseSelect } from 'app/components/common/BaseSelect';
 import { BaseRadio } from 'app/components/common/BaseRadio';
 import BaseButton from 'app/components/common/BaseButton';
 import { RegisterWrapper } from '../ReigsterStep.styles';
+import { useNavigate } from 'react-router-dom';
 
 const CheckboxList = [
   {
@@ -61,8 +62,9 @@ const CheckboxList = [
 ];
 const RegisterOne = () => {
   const [form] = S.RegisterOneForm.useForm();
+  const navigate = useNavigate();
   const onRegister = () => {
-    console.log('register');
+    navigate('/r2');
   };
   return (
     <RegisterWrapper>
@@ -104,7 +106,7 @@ const RegisterOne = () => {
                   name="firstName"
                   rules={[
                     {
-                      required: true,
+                      required: false,
                       message: 'Please input your username!',
                     },
                   ]}
@@ -117,7 +119,7 @@ const RegisterOne = () => {
                   name="lastName"
                   rules={[
                     {
-                      required: true,
+                      required: false,
                       message: 'Please input your username!',
                     },
                   ]}

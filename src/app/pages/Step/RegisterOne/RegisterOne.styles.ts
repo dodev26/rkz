@@ -33,6 +33,7 @@ export const GroupTextWarning = styled.div`
   color: ${({ theme }) => theme._textColorPrimary};
   em {
     display: block;
+    font-style: normal;
   }
   em:not(:first-child) {
     color: #f5616a;

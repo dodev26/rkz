@@ -3,12 +3,13 @@ import HomeLayout from 'app/layouts/HomeLayout';
 import MainLayout from 'app/layouts/MainLayout';
 import { HomePage } from 'app/pages/HomePage';
 import { LandingPage } from 'app/pages/LandingPage';
-import Login from 'app/pages/Login';
+import Login from 'app/pages/Auth/Login';
 import MessagePage from 'app/pages/MessagePage';
 import MyPage from 'app/pages/MyPage';
 
 import { NotFoundPage } from 'app/pages/NotFoundPage';
 import Offers from 'app/pages/Offers';
+import Register from 'app/pages/Auth/Reigister';
 import SearchHeadHunter from 'app/pages/SearchHeadHunter';
 import RegisterFive from 'app/pages/Step/RegisterFive';
 import RegisterFour from 'app/pages/Step/RegisterFour';
@@ -40,6 +41,7 @@ export const AppRouter = () => {
         </Route>
         <Route path="/auth" element={<AuthLayout />}>
           <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
         </Route>
         <Route path="" element={<MainLayout />}>
           <Route path="/mypage" element={<MyPage />} />

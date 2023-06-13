@@ -36,9 +36,14 @@ export const MessageTabs = styled(BaseTabs)`
 
     .ant-tabs-tab {
       font-weight: 700;
-      font-size: 16px;
-      line-height: 30px;
+      font-size: 14px;
       color: #272d4e;
+      ${media.md} {
+        font-size: 24px;
+        line-height: 40px;
+        font-size: 16px;
+        line-height: 30px;
+      }
       ${media.xl} {
         font-size: 24px;
         line-height: 40px;

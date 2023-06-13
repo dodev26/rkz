@@ -12,11 +12,17 @@ import {
   RegisterWrapper,
 } from '../ReigsterStep.styles';
 import Steps from '../components/Steps';
+import { useNavigate } from 'react-router-dom';
 
 const sizeWrapper = {
   maxWidth: 1050,
 };
 const RegisterTwo = () => {
+  const [form] = RegisterFormWrapper.useForm();
+  const navigate = useNavigate();
+  const onRegister = () => {
+    navigate('/r3');
+  };
   return (
     <RegisterWrapper>
       <S.RegisterTwoWrapper>
@@ -24,6 +30,8 @@ const RegisterTwo = () => {
           <Heading title="会員登録" icon={<Document />} />
           <Steps />
           <RegisterFormWrapper
+            onFinish={onRegister}
+            form={form}
             labelCol={{ span: 4 }}
             wrapperCol={{ span: 20 }}
             style={{ maxWidth: '100%' }}
@@ -36,7 +44,7 @@ const RegisterTwo = () => {
                 label="経験社数"
                 name="username"
                 rules={[
-                  { required: true, message: 'Please input your username!' },
+                  { required: false, message: 'Please input your username!' },
                 ]}
               >
                 <BaseSelect placeholder="大学院卒業（博士" />
@@ -45,7 +53,7 @@ const RegisterTwo = () => {
                 label="企業名"
                 name="password"
                 rules={[
-                  { required: true, message: 'Please input your password!' },
+                  { required: false, message: 'Please input your password!' },
                 ]}
               >
                 <BaseInput placeholder="企業名" />
@@ -54,7 +62,7 @@ const RegisterTwo = () => {
                 label="企業名"
                 name="password"
                 rules={[
-                  { required: true, message: 'Please input your password!' },
+                  { required: false, message: 'Please input your password!' },
                 ]}
               >
                 <BaseInput placeholder="○○学部○○専攻" />
@@ -63,7 +71,7 @@ const RegisterTwo = () => {
                 label="企業名"
                 name="password"
                 rules={[
-                  { required: true, message: 'Please input your password!' },
+                  { required: false, message: 'Please input your password!' },
                 ]}
               >
                 <RegisterFormWrapper.Item
@@ -93,7 +101,7 @@ const RegisterTwo = () => {
                 label="企業名"
                 name="password"
                 rules={[
-                  { required: true, message: 'Please input your password!' },
+                  { required: false, message: 'Please input your password!' },
                 ]}
               >
                 <BaseInput placeholder="備考" />
@@ -105,7 +113,7 @@ const RegisterTwo = () => {
                 label="経験社数"
                 name="username"
                 rules={[
-                  { required: true, message: 'Please input your username!' },
+                  { required: false, message: 'Please input your username!' },
                 ]}
               >
                 <BaseSelect placeholder="ネイティブ レベル" />
@@ -117,14 +125,18 @@ const RegisterTwo = () => {
                 label="経験社数"
                 name="username"
                 rules={[
-                  { required: true, message: 'Please input your username!' },
+                  { required: false, message: 'Please input your username!' },
                 ]}
               >
                 <BaseInput width={300} />
               </RegisterFormWrapper.Item>
             </FieldWrapper>
             <RegisterFormWrapper.Item label={false} wrapperCol={{ span: 24 }}>
-              <BaseButton type="primary" className="btn-register-step">
+              <BaseButton
+                htmlType="submit"
+                type="primary"
+                className="btn-register-step"
+              >
                 次のステップ
               </BaseButton>
             </RegisterFormWrapper.Item>

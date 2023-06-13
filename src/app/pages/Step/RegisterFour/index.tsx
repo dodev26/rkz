@@ -12,14 +12,20 @@ import TitleFields from '../components/TitleFields';
 import { BaseRadio } from 'app/components/common/BaseRadio';
 import BaseButton from 'app/components/common/BaseButton';
 import Steps from '../components/Steps';
+import { useNavigate } from 'react-router-dom';
 const RegisterFour = () => {
+  const [form] = RegisterFormWrapper.useForm();
+  const navigate = useNavigate();
+  const onRegister = () => {
+    navigate('/r5');
+  };
   return (
     <RegisterWrapper>
       <S.RegisterFourWrapper>
         <Container>
           <Heading title="会員登録" icon={<Document />} />
           <Steps />
-          <RegisterFormWrapper>
+          <RegisterFormWrapper form={form} onFinish={onRegister}>
             <FieldWrapper>
               <TitleFields title="リクルートエージェントの転職支援サービスについて" />
               <S.TextWrapper className="text-wrapper-first">
@@ -41,7 +47,11 @@ const RegisterFour = () => {
                 </BaseRadio.Group>
               </RegisterFormWrapper.Item>
               <RegisterFormWrapper.Item>
-                <BaseButton className="btn-register-step" type="primary">
+                <BaseButton
+                  htmlType="submit"
+                  className="btn-register-step"
+                  type="primary"
+                >
                   次へ
                 </BaseButton>
               </RegisterFormWrapper.Item>

@@ -32,7 +32,7 @@
   "scripts": {
     "// ---DEFAULT CRA---": "",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env CI=false react-scripts build",
     "test": "react-scripts test",
     "// ---TEMPLATE---": "Scripts will be also in the template",
     "start:prod": "yarn run build && serve -s build",

@@ -113,10 +113,13 @@ export const AttchBtn = styled(BaseButton)`
     font-size: 24px;
     line-height: 40px;
     color: #ffffff;
-    width: 247px;
+    width: 150px;
     display: none;
     ${media.xl} {
       display: flex;
+    }
+    ${media.xxl} {
+      width: 247px;
     }
   }
 `;

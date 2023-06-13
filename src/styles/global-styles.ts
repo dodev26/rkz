@@ -1,7 +1,7 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import { StyleConstants } from './StyleConstants';
 import { media } from './media';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 /* istanbul ignore next */
 export const GlobalStyle = createGlobalStyle`
 
@@ -71,6 +71,9 @@ line-height: 29px;
 color: #FFFFFF;
   max-width:333px;
 }
+ .ant-form-item-explain-error {
+      font-size: 12px;
+    }
 `;
 
 export const Wrapper = styled.div`
@@ -101,7 +104,7 @@ export const Container = styled.div`
   }
 `;
 
-export const LinkButton = styled(Link)`
+export const LinkButton = styled(NavLink)`
   width: auto;
   height: auto;
   display: flex;

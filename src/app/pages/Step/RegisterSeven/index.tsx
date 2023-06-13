@@ -11,6 +11,7 @@ import { Document } from 'app/assets';
 import BaseButton from 'app/components/common/BaseButton';
 import { Table } from 'antd';
 import Steps from '../components/Steps';
+import { useNavigate } from 'react-router-dom';
 
 const DataTable = [
   {
@@ -51,13 +52,22 @@ const DataTable = [
   },
 ];
 const RegisterSeven = () => {
+  const [form] = RegisterFormWrapper.useForm();
+  const navigate = useNavigate();
+  const onRegister = () => {
+    navigate('/');
+  };
   return (
     <RegisterWrapper>
       <S.RegisterSevenWrapper>
         <Container>
           <Heading title="会員登録" icon={<Document />} />
           <Steps />
-          <RegisterFormWrapper className="form-register-five">
+          <RegisterFormWrapper
+            form={form}
+            onFinish={onRegister}
+            className="form-register-five"
+          >
             <FieldWrapper className="wraptext-container">
               <h3>リクルートダイレクトスカウトのレジュメが完成しました。</h3>
               <div>
@@ -66,7 +76,11 @@ const RegisterSeven = () => {
                 (*)会員情報：レジュメの非公開情報以外の情報および利用履歴
               </div>
               <RegisterFormWrapper.Item>
-                <BaseButton className="btn-register-step" type="primary">
+                <BaseButton
+                  htmlType="submit"
+                  className="btn-register-step"
+                  type="primary"
+                >
                   企業ブロック設定はこちら
                 </BaseButton>
               </RegisterFormWrapper.Item>

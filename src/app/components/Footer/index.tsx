@@ -111,7 +111,7 @@ const Footer = () => {
         </S.FooterGroupLogo>
         <S.RowListLinkFooter justify="space-between" align="top">
           {FooterItem.map(item => (
-            <BaseCol key={item.id}>
+            <BaseCol xs={24} sm={12} lg={6} key={item.id}>
               <S.TitleListLinkFooter>{item.title}</S.TitleListLinkFooter>
               <S.ListLink>
                 {item.listLink.map(link => (

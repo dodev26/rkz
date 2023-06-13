@@ -43,11 +43,12 @@ export const ColOffer = styled.div`
   &.col-title {
     flex: 0 0 130px;
     background: #072d75;
-    padding: 12px 0px 12px 30px;
+    padding: 12px 12px 12px 30px;
     font-weight: 700;
     font-size: 18px;
     line-height: 30px;
     color: #ffffff;
+
     ${media.xl} {
       font-size: 20px;
       flex: 0 0 247px;

@@ -44,6 +44,13 @@ const CardHeadhunter = () => {
           </S.ButtonWrapper>
         </S.ContentCard>
       </S.ContentWrapper>
+      <BaseButton
+        typeAdded="secondary"
+        htmlType="button"
+        className="btn-attach-mobile"
+        style={{ width: '44px', height: '44px' }}
+        icon={<ATTACHNOBG />}
+      />
     </S.CardHeadhunterWrapper>
   );
 };

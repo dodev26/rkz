@@ -5,13 +5,23 @@ export const CardHeadhunterWrapper = styled.article`
   padding: 30px 15px 40px;
   background: ${({ theme }) => theme._backgroundSixth};
   border-radius: 20px;
+  position: relative;
   display: flex;
-
+  flex-direction: column;
   column-gap: 30px;
-  ${media.md} {
-    flex-direction: column;
-    row-gap: 20px;
+  row-gap: 20px;
+  .btn-attach-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -22px;
+    right: -10px;
+    ${media.md} {
+      display: none;
+    }
   }
+
   ${media.xl} {
     flex-direction: row;
     padding: 40px 28px 60px;
@@ -50,16 +60,17 @@ export const ContentCard = styled.div`
   height: 100%;
   overflow: hidden;
   column-gap: 30px;
-  ${media.md} {
-    flex-direction: column;
-  }
+  flex-direction: column;
+
   ${media.xl} {
     flex-direction: row;
   }
 `;
 
 export const ButtonWrapper = styled.div`
+  display: none;
   ${media.md} {
+    display: flex;
     flex: 0 0 130px;
   }
   ${media.xl} {
@@ -69,7 +80,7 @@ export const ButtonWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 63px;
+    margin-top: 30px;
     row-gap: 18px;
   }
 `;
@@ -84,8 +95,9 @@ export const HeaderCard = styled.div`
     max-width: 700px;
     & > h3 {
       font-weight: 700;
-      line-height: 40px;
+      line-height: 20px;
       color: #072d75;
+      font-size: 20px;
       ${media.md} {
         font-size: 24px;
       }
@@ -131,5 +143,10 @@ export const colDsc = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    & > li {
+      font-size: 16px;
+      line-height: 30px;
+      color: #6f757b;
+    }
   }
 `;

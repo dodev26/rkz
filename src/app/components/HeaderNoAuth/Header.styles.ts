@@ -15,14 +15,14 @@ export const Header = styled.header`
 export const NavBarDesktop = styled.nav`
   flex: 1;
   display: none;
-  ${media.lg} {
+  ${media.md} {
     display: flex;
   }
 `;
 export const NavBarMobile = styled.nav`
   flex: 1;
   display: flex;
-  ${media.lg} {
+  ${media.md} {
     display: none;
   }
 `;
@@ -31,33 +31,27 @@ export const NavListItem = styled.ul`
   column-gap: 17px;
 `;
 export const NavItem = styled.li`
-  .hambuger-menu.ant-btn {
-    border-radius: 10px;
-    width: 40px;
-    height: 40px;
-    background-color: ${({ theme }) => theme._backgroundComponentSecondary};
-    color: ${({ theme }) => theme._textSecondary};
-  }
   .ant-btn {
-    font-size: 16px;
-    line-height: 20px;
-  }
-  .ant-btn.btn-header-sign-in {
-    border-radius: 30px;
-    padding: 10px 20px;
-    height: auto;
-    overflow: hidden;
-    font-family: inherit;
-    text-transform: uppercase;
-    height: 47px;
-    ${media.lg} {
-      padding: 15px 38px;
-      min-width: 131px;
+    font-size: 15px;
+    ${media.xxl} {
+      font-size: 16px;
+      line-height: 20px;
     }
   }
-  .btn-header {
-    min-width: 200px;
-    padding: 15px;
+  .ant-btn.btn-header {
+    min-width: 150px;
+    padding: 10px;
+    ${media.xxl} {
+      min-width: 200px;
+    }
+  }
+  .ant-btn.btn-header-sign-in {
+    ${media.xl} {
+      min-width: 120px;
+    }
+    ${media.xxl} {
+      min-width: 131px;
+    }
   }
 `;
 
@@ -68,4 +62,7 @@ export const LogoHeader = styled(Link)`
   line-height: 39px;
   color: ${p => p.theme._textColorPrimary};
   text-transform: uppercase;
+  ${media.xl} {
+    font-size: 32px;
+  }
 `;

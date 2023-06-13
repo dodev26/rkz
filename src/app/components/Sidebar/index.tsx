@@ -62,10 +62,13 @@ const Sidebar = () => {
             animate="visible"
           >
             <S.MenuItemSideBar variants={item}>
-              <S.LinkSideBar to="/home">Home</S.LinkSideBar>
+              <S.LinkSideBar to="/sign-in">Sign in</S.LinkSideBar>
             </S.MenuItemSideBar>
             <S.MenuItemSideBar variants={item}>
-              <S.LinkSideBar to="/sign-in">Sign in</S.LinkSideBar>
+              <S.LinkSideBar to="/">For Job Seeker</S.LinkSideBar>
+            </S.MenuItemSideBar>
+            <S.MenuItemSideBar variants={item}>
+              <S.LinkSideBar to="/">For Company</S.LinkSideBar>
             </S.MenuItemSideBar>
           </S.MenuSideBar>
         )}

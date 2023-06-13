@@ -48,7 +48,7 @@ const HeaderNoAuth = () => {
                   </LinkButton>
                 </S.NavItem>
                 <S.NavItem>
-                  <LinkButton to="/">
+                  <LinkButton to="/auth/login">
                     <BaseButton
                       htmlType="button"
                       type="primary"

@@ -28,6 +28,7 @@ export { ReactComponent as Attach } from './icons/attach.svg';
 export { ReactComponent as New } from './icons/new.svg';
 export { ReactComponent as Message } from './icons/Message.svg';
 export { ReactComponent as ArrowTop } from './icons/arrow_top.svg';
+export { ReactComponent as Star } from './icons/star.svg';
 export {
   WOOMAN,
   Arrow_top,

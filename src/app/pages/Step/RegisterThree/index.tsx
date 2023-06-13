@@ -14,11 +14,17 @@ import { BaseInput } from 'app/components/common/BaseInput';
 import { BaseCheckBoxV2 } from 'app/components/BaseCheckBoxV2';
 import BaseButton from 'app/components/common/BaseButton';
 import Steps from '../components/Steps';
+import { useNavigate } from 'react-router-dom';
 
 const sizeWrapper = {
   maxWidth: 1050,
 };
 const RegisterThree = () => {
+  const [form] = RegisterFormWrapper.useForm();
+  const navigate = useNavigate();
+  const onRegister = () => {
+    navigate('/r4');
+  };
   return (
     <RegisterWrapper>
       <S.RegisterThreeWrapper>
@@ -26,6 +32,8 @@ const RegisterThree = () => {
           <Heading title="会員登録" icon={<Document />} />
           <Steps />
           <RegisterFormWrapper
+            form={form}
+            onFinish={onRegister}
             labelCol={{ span: 4 }}
             wrapperCol={{ span: 20 }}
             style={{ maxWidth: '100%' }}
@@ -63,7 +71,7 @@ const RegisterThree = () => {
                 label="企業名"
                 name="password"
                 rules={[
-                  { required: true, message: 'Please input your password!' },
+                  { required: false, message: 'Please input your password!' },
                 ]}
               >
                 <RegisterFormWrapper.Item
@@ -105,7 +113,11 @@ const RegisterThree = () => {
               />
             </RegisterFormWrapper.Item>
             <RegisterFormWrapper.Item label={false} wrapperCol={{ span: 24 }}>
-              <BaseButton type="primary" className="btn-register-step">
+              <BaseButton
+                htmlType="submit"
+                type="primary"
+                className="btn-register-step"
+              >
                 次のステップ
               </BaseButton>
             </RegisterFormWrapper.Item>

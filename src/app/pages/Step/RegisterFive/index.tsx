@@ -11,6 +11,7 @@ import { Document } from 'app/assets';
 import BaseButton from 'app/components/common/BaseButton';
 import { Table } from 'antd';
 import Steps from '../components/Steps';
+import { useNavigate } from 'react-router-dom';
 
 const DataTable = [
   {
@@ -51,13 +52,22 @@ const DataTable = [
   },
 ];
 const RegisterFive = () => {
+  const [form] = RegisterFormWrapper.useForm();
+  const navigate = useNavigate();
+  const onRegister = () => {
+    navigate('/r6');
+  };
   return (
     <RegisterWrapper>
       <S.RegisterFiveWrapper>
         <Container>
           <Heading title="会員登録" icon={<Document />} />
           <Steps />
-          <RegisterFormWrapper className="form-register-five">
+          <RegisterFormWrapper
+            className="form-register-five"
+            form={form}
+            onFinish={onRegister}
+          >
             <FieldWrapper className="wraptext-container">
               <h3>
                 リクルートダイレクトスカウトをご利用いただけるようになりました。
@@ -68,7 +78,11 @@ const RegisterFive = () => {
                 より、あなたに合ったスカウトが届きやすくなります
               </div>
               <RegisterFormWrapper.Item>
-                <BaseButton className="btn-register-step" type="primary">
+                <BaseButton
+                  htmlType="submit"
+                  className="btn-register-step"
+                  type="primary"
+                >
                   レジュメ登録を続ける
                 </BaseButton>
               </RegisterFormWrapper.Item>

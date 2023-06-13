@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from 'styles/global-styles';
 import Heading from 'app/components/Heading';
-import { SEARCH } from 'app/assets';
+import { Attach, SEARCH } from 'app/assets';
 import * as S from './SearchHeadHunter.styles';
 import { BaseCol } from 'app/components/common/BaseCol';
 import { BaseRow } from 'app/components/common/BaseRow';
@@ -55,8 +55,8 @@ const SearchHeadHunter = () => {
               <S.FormSearchHeadHunter.Item
                 name="field1"
                 label="業界"
-                labelCol={{ xs: 24, sm: 24, md: 4, lg: 24, xl: 8 }}
-                wrapperCol={{ xs: 24, sm: 24, md: 20, lg: 24, xl: 16 }}
+                labelCol={{ xs: 24, sm: 4, lg: 8 }}
+                wrapperCol={{ xs: 24, sm: 20, lg: 16 }}
               >
                 <BaseSelect />
               </S.FormSearchHeadHunter.Item>
@@ -65,8 +65,8 @@ const SearchHeadHunter = () => {
               <S.FormSearchHeadHunter.Item
                 name="field2"
                 label="経験年数"
-                labelCol={{ xs: 24, sm: 24, md: 4, lg: 24, xl: 8 }}
-                wrapperCol={{ xs: 24, sm: 24, md: 20, lg: 24, xl: 16 }}
+                labelCol={{ xs: 24, sm: 4, lg: 8 }}
+                wrapperCol={{ xs: 24, sm: 20, lg: 16 }}
               >
                 <BaseSelect />
               </S.FormSearchHeadHunter.Item>
@@ -75,8 +75,8 @@ const SearchHeadHunter = () => {
               <S.FormSearchHeadHunter.Item
                 name="field3"
                 label="勤務地"
-                labelCol={{ xs: 24, sm: 24, md: 4, lg: 24, xl: 8 }}
-                wrapperCol={{ xs: 24, sm: 24, md: 20, lg: 24, xl: 16 }}
+                labelCol={{ xs: 24, sm: 4, lg: 8 }}
+                wrapperCol={{ xs: 24, sm: 20, lg: 16 }}
               >
                 <BaseSelect />
               </S.FormSearchHeadHunter.Item>
@@ -85,8 +85,8 @@ const SearchHeadHunter = () => {
               <S.FormSearchHeadHunter.Item
                 name="field4"
                 label="職業"
-                labelCol={{ xs: 24, sm: 24, md: 4, lg: 24, xl: 8 }}
-                wrapperCol={{ xs: 24, sm: 24, md: 20, lg: 24, xl: 16 }}
+                labelCol={{ xs: 24, sm: 4, lg: 8 }}
+                wrapperCol={{ xs: 24, sm: 20, lg: 16 }}
               >
                 <BaseSelect />
               </S.FormSearchHeadHunter.Item>
@@ -95,8 +95,8 @@ const SearchHeadHunter = () => {
               <S.FormSearchHeadHunter.Item
                 name="field5"
                 label="フリーワード"
-                labelCol={{ xs: 24, sm: 24, md: 4, lg: 24, xl: 8 }}
-                wrapperCol={{ xs: 24, sm: 24, md: 20, lg: 24, xl: 16 }}
+                labelCol={{ xs: 24, sm: 4, lg: 8 }}
+                wrapperCol={{ xs: 24, sm: 20, lg: 16 }}
               >
                 <BaseSelect />
               </S.FormSearchHeadHunter.Item>
@@ -105,6 +105,9 @@ const SearchHeadHunter = () => {
               <S.FormSearchHeadHunter.Item label={false} className="last-col">
                 <S.FormSearchHeadHunter.Item
                   name="year"
+                  wrapperCol={{
+                    span: 24,
+                  }}
                   style={{
                     display: 'inline-block',
                     width: 'calc(50% - 8px)',

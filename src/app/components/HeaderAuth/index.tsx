@@ -1,6 +1,9 @@
 import React from 'react';
 import * as S from './HeaderAuth.styles';
 import { Container, LinkButton } from 'styles/global-styles';
+import classNames from 'classnames';
+import { MenuOutlined } from '@ant-design/icons';
+import { useAppContext } from 'contexts/App.context';
 
 const Navbar = [
   {
@@ -21,7 +24,7 @@ const Navbar = [
   },
   {
     name: 'ヘッドハンター検索',
-    pathname: '/headhunter-search',
+    pathname: '/search-headhunter',
   },
   {
     name: '特集記事',
@@ -29,6 +32,7 @@ const Navbar = [
   },
 ];
 const HeaderAuth = () => {
+  const { ToggleMenu } = useAppContext();
   return (
     <S.HeaderAuthWrapper>
       <Container className="container-header">
@@ -37,11 +41,22 @@ const HeaderAuth = () => {
           <S.NavList>
             {Navbar.map(item => (
               <S.NavItem key={item.name}>
-                <LinkButton to={item.pathname}>{item.name}</LinkButton>
+                <LinkButton
+                  className={({ isActive }) => classNames({ active: isActive })}
+                  to={item.pathname}
+                >
+                  {item.name}
+                </LinkButton>
               </S.NavItem>
             ))}
           </S.NavList>
           <S.BtnLogout>LOGOUT</S.BtnLogout>
+          <S.Hamburger
+            htmlType="button"
+            type="text"
+            onClick={ToggleMenu}
+            icon={<MenuOutlined rev={undefined} />}
+          />
         </S.Navbar>
       </Container>
     </S.HeaderAuthWrapper>

@@ -16,10 +16,16 @@ import { BaseRow } from 'app/components/common/BaseRow';
 import { BaseCol } from 'app/components/common/BaseCol';
 import BaseButton from 'app/components/common/BaseButton';
 import Steps from '../components/Steps';
+import { useNavigate } from 'react-router-dom';
 const sizeWrapper = {
   maxWidth: 1050,
 };
 const RegisterSix = () => {
+  const [form] = RegisterFormWrapper.useForm();
+  const navigate = useNavigate();
+  const onRegister = () => {
+    navigate('/r7');
+  };
   return (
     <RegisterWrapper>
       <S.RegisterSixWrapper>
@@ -34,6 +40,8 @@ const RegisterSix = () => {
             wrapperCol={{ span: 20 }}
             style={{ maxWidth: '100%' }}
             labelAlign="left"
+            form={form}
+            onFinish={onRegister}
           >
             <TitleFields title="リクルートエージェントの転職支援サービスについて" />
             <FieldWrapper {...sizeWrapper}>
@@ -167,7 +175,11 @@ const RegisterSix = () => {
               </RegisterFormWrapper.Item>
             </FieldWrapper>
             <RegisterFormWrapper.Item label={false} wrapperCol={{ span: 24 }}>
-              <BaseButton type="primary" className="btn-register-step">
+              <BaseButton
+                htmlType="submit"
+                type="primary"
+                className="btn-register-step"
+              >
                 完了する
               </BaseButton>
             </RegisterFormWrapper.Item>
